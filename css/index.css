@@ -1,0 +1,208 @@
+/* root variables */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+:root {
+  --clr-neutral-100: hsla(0, 0%, 100%, 0.861);
+  --clr-neutral-200: hsl(0, 0%, 100%);
+  --clr-neutral-300: hsla(0, 0%, 0%, 0.081);
+  --clr-neutral-400: hsl(35, 80%, 90%);
+  --clr-neutral-500: hsl(35, 90%, 84%);
+  --clr-neutral-900: hsla(0, 1%, 18%, 0.954);
+
+  --clr-primary-400: hsla(120, 54%, 28%, 0.9);
+  --clr-primary-100: hsl(130, 70%, 40%);
+  --clr-accent-400: hsl(20, 90%, 50%);
+  --clr-accent-100: hsl(20, 100%, 76%);
+  --clr-accent-0: hsl(20, 100%, 70%);
+
+  --ff-primary: "Be Vietnam Pro", sans-serif;
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-bold: 600;
+  --fw-semibold: 550;
+  --fw-regular: 500;
+
+  --fs-topheading: 3rem;
+  --fs-heading: 2.2rem;
+  --fs-subheading: 1.2rem;
+  --fs-nav: 0.85rem;
+  --fs-body: 1rem;
+  --fs-button: 0.8125rem;
+  --lineheight: 3.2rem;
+  --shadow1: 0px 2px 5px hsla(81, 16%, 60%, 0.822);
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    --fs-topheading: 4rem;
+    --fs-heading: 2.5rem;
+    --fs-subheading: 1.3rem;
+    --fs-body: 1.15rem;
+    --fs-nav: 1rem;
+    --fs-button: 0.95rem;
+    --lineheight: 4.1rem;
+  }
+}
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+
+  font-family: var(--ff-body);
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.hero {
+  width: 90%;
+  height: 100%;
+  background-color: var(--clr-neutral-500);
+  padding: 10px 9%;
+  border-radius: 0 5% 85% 0;
+  box-shadow: var(--shadow1);
+}
+.hero .logo {
+  max-width: 45%;
+}
+.hero .logo img {
+  height: 120px;
+}
+.hero h2 {
+  font-size: var(--fs-topheading);
+  color: var(--clr-primary-400);
+  line-height: var(--lineheight);
+  font-weight: var(--fw-bold);
+  margin: 15vh 0 5vh;
+  word-wrap: break-word;
+  -ms-word-wrap: break-word;
+}
+
+.hero p {
+  font-size: var(--fs-body);
+  color: var(--clr-neutral-900);
+  width: min(100%, 600px);
+  margin: 15px 0;
+  text-align: left;
+}
+.btn-container {
+  width: 100%;
+  display: inline-flex;
+}
+.btn1,
+.btn2 {
+  margin: 30px 10px 10px 0;
+
+  font-size: var(--fs-button);
+  font-weight: var(--fw-semibold);
+  padding: 10px 15px;
+  border: none;
+  border-width: 2px;
+
+  border-radius: 7px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+.btn1,
+.btn2:hover,
+.btn2:focus-visible {
+  background-color: var(--clr-primary-400);
+
+  color: white;
+}
+.btn2,
+.btn1:hover,
+.btn1:focus-within {
+  background-color: #fff;
+  color: var(--clr-primary-400);
+  border: 2px solid var(--clr-primary-400);
+}
+@media screen and (max-width: 1100px) {
+  .hero {
+    width: 95%;
+    border-radius: 0 0 70% 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  .hero {
+    width: 100%;
+
+    border-radius: 0 0 60% 0;
+  }
+  .hero h2 {
+    margin: 10vh 0 5vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    padding: 20px;
+    width: 100%;
+
+    border-radius: 0 0 30% 0;
+  }
+  .hero h2 {
+    margin: 30px 0;
+  }
+}

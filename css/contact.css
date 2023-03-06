@@ -1,0 +1,425 @@
+/* root variables */
+:root {
+  --clr-neutral-100: hsla(0, 0%, 100%, 0.861);
+  --clr-neutral-200: hsl(0, 0%, 100%);
+  --clr-neutral-300: hsla(0, 0%, 0%, 0.081);
+  --clr-neutral-400: hsl(35, 80%, 90%);
+  --clr-neutral-500: hsl(35, 90%, 84%);
+  --clr-neutral-900: hsl(0, 1%, 18%);
+
+  --clr-primary-400: hsla(120, 54%, 28%, 0.9);
+  --clr-primary-100: hsl(130, 70%, 40%);
+  --clr-accent-400: hsl(20, 90%, 50%);
+  --clr-accent-100: hsl(20, 100%, 76%);
+  --clr-accent-0: hsl(20, 100%, 70%);
+
+  --ff-primary: "Be Vietnam Pro", sans-serif;
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fw-bold: 700;
+  --fw-semibold: 550;
+  --fw-regular: 500;
+
+  --fs-topheading: 3.5rem;
+  --fs-heading: 2.2rem;
+  --fs-subheading: 1.2rem;
+  --fs-nav: 0.85rem;
+  --fs-body: 1rem;
+  --fs-button: 0.8125rem;
+  --shadow1: 0px 5px 10px hsl(80, 16%, 60%);
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    --fs-topheading: 4.5rem;
+    --fs-heading: 2.5rem;
+    --fs-subheading: 1.3rem;
+    --fs-body: 1.15rem;
+    --fs-nav: 1rem;
+  }
+}
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+
+  font-family: var(--ff-body);
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: white;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* styling the header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110px;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  position: sticky;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px grey;
+}
+
+header.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+#logo {
+  margin: 20px;
+  height: 80px;
+  width: 25%;
+}
+
+/* styling the igation bar */
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  right: 20px;
+}
+
+.nav-item {
+  margin-left: 2rem;
+}
+
+.nav-item a {
+  padding: 8px 10px;
+  border-radius: 2px;
+  font-size: 17px;
+  font-weight: var(--fw-semibold);
+  color: var(--clr-primary-400);
+  text-decoration: none;
+  position: relative;
+}
+.nav-item a::after {
+  content: " ";
+  width: 100%;
+  height: 3px;
+  background-color: var(--clr-accent-400);
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  transform: scale(0);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.nav-item a:hover::after,
+.nav-item a.active::after {
+  transform: translateX(5px);
+  transform: scale(0.6);
+  transform-origin: right;
+}
+
+.nav-item:hover {
+  transform: translateX(5px);
+}
+
+.menu-bar {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3.5px;
+  border-radius: 5px;
+  margin: 5px auto;
+
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--clr-primary-400);
+}
+
+@media screen and (max-width: 1100px) {
+  .nav-item {
+    margin-left: 1.5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  #logo {
+    height: 60px;
+    width: 30%;
+  }
+
+  header {
+    height: 90px;
+    width: 100%;
+  }
+  .nav-menu {
+    position: fixed;
+    right: -70%;
+    top: 5.6rem;
+    flex-direction: column;
+    background-color: white;
+    width: 70%;
+    text-align: center;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    transition-delay: 0.4s;
+    box-shadow: 0 10px 27px #e6e6e6;
+  }
+
+  .nav-item {
+    margin: 2rem 0;
+  }
+
+  .menu-bar {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    right: 80%;
+  }
+  .menu-bar.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-bar.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-bar.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+}
+/* ***end of nav styling** */
+
+/* text styling */
+h4 {
+  color: var(--clr-primary-400);
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-bold);
+  padding: 10px 0;
+  line-height: 1.2;
+  font-family: var(--ff-heading);
+}
+
+p {
+  padding-inline: 15px;
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-body);
+  color: var(--clr-neutral-900);
+}
+
+/* icons */
+.fa-envelope,
+.fa-phone,
+.fa-location-dot {
+  font-weight: var(--fw-semibold);
+  color: rgb(92, 89, 89);
+  font-size: calc(var(--fs-nav) + 10%);
+  margin-right: 10px;
+}
+
+.contactflex {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.contactflex h4 {
+  margin: 5px;
+}
+.leftcontent {
+  width: 100%;
+  padding: 30px;
+}
+.rightcontent {
+  width: 100%;
+  padding: 20px;
+}
+.contactflex p {
+  padding: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  border: 1px solid rgba(122, 119, 119, 0.44);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  border: 3px solid var(--clr-primary-100);
+  outline: 0;
+}
+::placeholder {
+  color: rgba(122, 120, 120, 0.5);
+}
+label {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--clr-primary-400);
+}
+
+input[type="submit"] {
+  border: 3px solid var(--clr-primary-400);
+  color: var(--clr-primary-400);
+  background-image: url(f1d8);
+
+  font-weight: var(--fw-semibold);
+  font-size: 20px;
+  cursor: pointer;
+  width: 50%;
+  padding: 8px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+  border: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .contactflex {
+    flex-direction: row;
+    width: 100%;
+  }
+  .leftcontent {
+    width: 45%;
+  }
+  .rightcontent {
+    width: 50%;
+  }
+  input[type="submit"] {
+    width: 30%;
+    float: right;
+  }
+}
+/* footer styling */
+
+footer {
+  background-image: linear-gradient(
+      258deg,
+      rgba(237, 237, 237, 0.05) 0%,
+      rgba(237, 237, 237, 0.05) 31%,
+      rgba(6, 6, 6, 0.05) 31%,
+      rgba(6, 6, 6, 0.05) 100%
+    ),
+    linear-gradient(
+      11deg,
+      rgba(45, 45, 45, 0.05) 0%,
+      rgba(45, 45, 45, 0.05) 72%,
+      rgba(247, 247, 247, 0.05) 72%,
+      rgba(247, 247, 247, 0.05) 100%
+    ),
+    linear-gradient(
+      235deg,
+      rgba(248, 248, 248, 0.05) 0%,
+      rgba(248, 248, 248, 0.05) 24%,
+      rgba(29, 29, 29, 0.05) 24%,
+      rgba(29, 29, 29, 0.05) 100%
+    ),
+    linear-gradient(90deg, rgb(54, 254, 89), rgb(71, 192, 12));
+
+  background-color: var(--clr-primary-400);
+  background-blend-mode: soft-light;
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+  padding: 10px 30px 10px;
+  bottom: 0;
+}
+
+footer p {
+  font-size: calc(var(--fs-body) - 10%);
+  padding-top: 0.5in;
+  font-weight: lighter;
+  margin: 0px;
+  padding-left: 0;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+}
+footer p .copyright {
+  font-size: calc(var(--fs-body) + 5%);
+}
+footer .fa-brands {
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  margin: 5px;
+  border-radius: 50%;
+}
+/* end of footer styling */

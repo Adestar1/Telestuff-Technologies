@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,500;0,600;1,900&family=Bebas+Neue&family=Big+Shoulders+Display:wght@700&family=Roboto+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/8f7262ad80.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Contact Us</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon_io/site.webmanifest" />
+  </head>
+
+  <body>
+    <header id="navbar">
+      <img src="images/telestuff-logo.png" alt="logo" id="logo" />
+
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="about.html"> ABOUT</a></li>
+          <li class="nav-item"><a href="services.html">OUR SERVICES</a></li>
+          <li class="nav-item"><a href="reference.html">REFERENCE</a></li>
+          <li class="nav-item">
+            <a href="contact.html" class="active"> CONTACT US</a>
+          </li>
+        </ul>
+        <div class="menu-bar">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="contactflex">
+      <div class="leftcontent">
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          4,Olayiwola Street,Off Kudirat Abiola Way,Oregun,Ikeja,Lagos State
+        </p>
+
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          07000TELESTUFF, 08033579200, 08026627601
+        </p>
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          rasak@telestufftechnologies.com; idowu@telestufftechnologies.com;
+          admin@telestufftechnologies.com
+        </p>
+        <br />
+
+        <img
+          src="images/contact.jpg"
+          alt="contact"
+          width="100%"
+          height="auto"
+          style="border-top: 2px solid hsl(20, 90%, 50%); padding-top: 10px"
+        />
+      </div>
+
+      <div class="rightcontent">
+        <form action="https://formspree.io/f/xknabykw" method="POST">
+          <h4>Send us a message</h4>
+          <div>
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              cols="30"
+              rows="7"
+              name="message"
+              placeholder="Write a message here"
+              required
+            ></textarea>
+          </div>
+
+          <input type="submit" name="'btn-send" value="Send" />
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        <span class="copyright">&copy;</span> Telestuff Technologies Ltd.<br />
+        All rights reserved.
+      </p>
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-whatsapp"></i>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
