@@ -411,12 +411,7 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
-@media screen and (min-width: 320px) {
-  .Projects .image-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  }
-}
+
 .Projects .image-gallery .image-container {
   background-color: white;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
@@ -441,7 +436,7 @@ p {
   object-fit: cover;
   -o-object-fit: cover;
 }
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 360px) {
   .Projects .image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
