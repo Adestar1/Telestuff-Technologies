@@ -297,14 +297,14 @@ h4 {
 }
 
 h5 {
-  font-size: var(--fs-heading);
+  font-size: calc(var(--fs-heading) - 30%);
   font-weight: var(--fw-bold);
   background-image: linear-gradient(
     120deg,
     var(--clr-primary-100),
     rgba(50, 205, 50, 0.5)
   );
-  /* text-align: center; */
+
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -335,6 +335,9 @@ p {
   }
   h1 {
     font-size: 4.3rem;
+  }
+  h5 {
+    font-size: var(--fs-heading);
   }
 }
 @media screen and (min-width: 1000px) {
@@ -370,7 +373,7 @@ p {
   margin: auto;
   width: 80%;
 
-  height: 35vh;
+  height: fit-content;
   padding: 20px;
   position: relative;
   box-shadow: var(--shadow1);
@@ -407,7 +410,7 @@ p {
 
 .core-values-section::before {
   content: " ";
-  width: 250px;
+  width: min(250px, 80%);
   height: 250px;
   background-color: var(--clr-neutral-500);
   border-radius: 0 70% 0 0;
@@ -610,7 +613,7 @@ p {
   align-items: center;
 
   margin: 10px 0;
-  padding: 60px;
+  padding: 60px 20px;
   gap: 15px;
   width: 100%;
 }

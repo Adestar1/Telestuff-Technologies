@@ -311,7 +311,7 @@ h4::after {
 }
 
 h5 {
-  font-size: var(--fs-heading);
+  font-size: calc(var(--fs-heading) - 30%);
   font-weight: var(--fw-bold);
   background-image: linear-gradient(
     120deg,
@@ -351,6 +351,9 @@ p {
   h1 {
     font-size: 4.3rem;
   }
+  h5 {
+    font-size: var(--fs-heading);
+  }
 }
 @media screen and (min-width: 1000px) {
   h4,
@@ -365,6 +368,7 @@ p {
   }
   .top-2 {
     clip-path: polygon(0 0, 100% 0, 100% 63%, 6% 100%);
+    padding-left: 50px;
   }
 }
 /* end of text styling  */
@@ -404,10 +408,15 @@ p {
 
 .Projects .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
-
+@media screen and (min-width: 320px) {
+  .Projects .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
 .Projects .image-gallery .image-container {
   background-color: white;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
@@ -423,8 +432,8 @@ p {
 .Projects .image-gallery .image-container .image {
   margin-bottom: 20px;
   overflow: hidden;
-  height: 300px;
-  border-radius: 5px;
+  height: 240px;
+  border-radius: 3px;
 }
 .Projects .image-gallery .image-container .image img {
   height: 100%;
@@ -509,7 +518,7 @@ p {
   width: 100%;
 }
 
-.contact-btn {
+/* .contact-btn {
   background-image: linear-gradient(
     120deg,
     var(--clr-primary-100),
@@ -524,6 +533,23 @@ p {
   font-size: 16px;
   font-weight: var(--fw-semibold);
 
+  margin: 2rem;
+  margin: auto;
+} */
+
+.contact-btn {
+  background-image: linear-gradient(
+    120deg,
+    var(--clr-primary-100),
+    rgba(50, 205, 50, 0.5)
+  );
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+
+  font-weight: var(--fw-semibold);
+  color: var(--clr-neutral-100);
+  padding: 15px 30px;
   margin: 2rem;
   /* margin: auto; */
 }

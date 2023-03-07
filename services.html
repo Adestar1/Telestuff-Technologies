@@ -17,7 +17,7 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+    /><link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script
       src="https://kit.fontawesome.com/8f7262ad80.js"
       crossorigin="anonymous"
@@ -80,7 +80,7 @@
           background-position:bottom;
         "
       >
-        <h1>Our Services</h1>
+        <h1>OUR SERVICES</h1>
       </div>
 
       <p>
@@ -154,7 +154,8 @@
         </button>
       </a>
 
-      <div class="bottomcontent">
+      <div class="bottomcontent" data-aos="slide-right" data-aos-once="true"
+          data-aos-duration="500">
         <h5>End to end solutions for your telecommunication challenges</h5>
 
         <a href="contact.html"
@@ -174,6 +175,10 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"

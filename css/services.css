@@ -273,7 +273,7 @@ header.sticky {
 /* styling the banner */
 
 .top-2 {
-  padding-left: 50px;
+  padding-left: 20px;
 
   background: url(Picture12.jpg),
     linear-gradient(to top right, var(--clr-primary-400), var(--clr-accent-400));
@@ -309,7 +309,7 @@ h4 {
 }
 
 h5 {
-  font-size: var(--fs-heading);
+  font-size: calc(var(--fs-heading) - 30%);
   font-weight: var(--fw-bold);
   background-image: linear-gradient(
     120deg,
@@ -355,6 +355,9 @@ p {
   h1 {
     font-size: 4.3rem;
   }
+  h5 {
+    font-size: var(--fs-heading);
+  }
 }
 @media screen and (min-width: 1000px) {
   h4,
@@ -369,6 +372,7 @@ p {
   }
   .top-2 {
     clip-path: polygon(0 0, 100% 0, 100% 63%, 6% 100%);
+    padding-left: 50px;
   }
 }
 /* end of text styling  */
