@@ -401,14 +401,14 @@ p {
 }
 
 .Projects {
-  max-width: 85%;
+  width: 85%;
   margin: 0 auto;
   text-align: left;
 }
 
 .Projects .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 @media screen and (min-width: 320px) {
@@ -432,7 +432,7 @@ p {
 .Projects .image-gallery .image-container .image {
   margin-bottom: 20px;
   overflow: hidden;
-  height: 240px;
+  height: 200px;
   border-radius: 3px;
 }
 .Projects .image-gallery .image-container .image img {
@@ -441,6 +441,15 @@ p {
   object-fit: cover;
   -o-object-fit: cover;
 }
+@media screen and (min-width: 320px) {
+  .Projects .image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .Projects .image-gallery .image-container .image {
+    height: 300px;
+  }
+}
 .Projects .image-gallery .image-container:hover .image img {
   transform: scale(1.05);
 }
@@ -448,7 +457,7 @@ p {
 .Projects .image-gallery .image-container p {
   font-size: var(--fs-subheading);
   color: var(--clr-primary-400);
-  padding: 15px 5px;
+  padding: 10px 5px;
   font-weight: var(--fw-semibold);
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
